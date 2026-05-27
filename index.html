@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Χρήστος & Μαρία - Ο Γάμος Μας</title>
+    <!-- Google Fonts for elegant typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #d4af37; /* Gold accent */
+            --bg-color: #fcfcfc;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=80') center/cover;
+            padding: 20px;
+        }
+
+        .names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .date-hero {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        /* Information Blocks */
+        .info-block {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .info-title {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .people-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .person-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 30px auto;
+        }
+
+        input, select, textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background-color: var(--accent-color);
+        }
+
+        .bank-details {
+            font-family: monospace;
+            font-size: 1.1rem;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .names { font-size: 3.5rem; }
+            .date-hero { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1 class="names">Χρήστος & Μαρία</h1>
+        <p class="date-hero">Κυριακή 5 Ιουλίου | 6:00 μ.μ.</p>
+    </section>
+
+    <div class="container">
+        
+        <!-- EVENT DETAILS -->
+        <section class="info-block">
+            <h2>Το Μυστήριο & Η Δεξίωση</h2>
+            <div class="info-title">Ιερό Παρεκκλήσιο Αγίου Παϊσίου</div>
+            <p>Κτήμα Νότο<br>Μαρίνου Αντύπα 50, Πυλαία</p>
+            <p><strong>Ώρα:</strong> 6:00 μ.μ.</p>
+            <br>
+            <div class="info-title">Δεξίωση</div>
+            <p>Θα ακολουθήσει δεξίωση στον ίδιο χώρο, στο <strong>Κτήμα Νότο</strong>.</p>
+        </section>
+
+        <!-- PEOPLE -->
+        <section class="info-block">
+            <h2>Με την ευχή τους</h2>
+            
+            <div class="people-grid">
+                <div class="person-group">
+                    <div class="info-title">Γονείς</div>
+                    <p>Στέλιος & Χρύσα Πατσιατζή</p>
+                    <p>Χρήστος & Γλυκερία Γκουμά</p>
+                </div>
+                
+                <div class="person-group">
+                    <div class="info-title">Κουμπάροι</div>
+                    <p>Καλλιόπη Σατραζέμη</p>
+                    <p>Βασίλης Ρέππας</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP SECTION -->
+        <section class="info-block" id="rsvp">
+            <h2>R.S.V.P.</h2>
+            <p>Παρακαλούμε θερμά επιβεβαιώστε τη παρουσία σας μέχρι τις <strong>15 Ιουνίου</strong>.</p>
+            <p>Τηλέφωνο επικοινωνίας: <strong>6945029569</strong></p>
+            
+            <p style="margin-top: 30px;"><em>Ή συμπληρώστε την παρακάτω φόρμα:</em></p>
+            
+            <!-- Replace YOUR_FORMSPREE_CODE_HERE with the code Formspree gives you -->
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_CODE_HERE" method="POST">
+                <input type="text" name="Ονοματεπώνυμο" placeholder="Το Ονοματεπώνυμό σας" required>
+                <select name="Παρουσία" required>
+                    <option value="" disabled selected>Θα παρευρεθείτε;</option>
+                    <option value="Ναι, με χαρά!">Ναι, με χαρά!</option>
+                    <option value="Δυστυχώς δεν θα τα καταφέρω">Δυστυχώς δεν θα τα καταφέρω</option>
+                </select>
+                <input type="number" name="Αριθμός_Ατόμων" placeholder="Αριθμός Ατόμων" min="1" max="10">
+                <textarea name="Ευχές" placeholder="Αφήστε μας μια ευχή (Προαιρετικό)" rows="3"></textarea>
+                <button type="submit">ΑΠΟΣΤΟΛΗ</button>
+            </form>
+        </section>
+
+        <!-- REGISTRY SECTION -->
+        <section class="info-block">
+            <h2>Λίστα Γάμου</h2>
+            <p>Η παρουσία σας θα είναι για εμάς το καλύτερο δώρο!</p>
+            <p>Για όσους επιθυμούν, υπάρχει προαιρετική λίστα γάμου στον παρακάτω λογαριασμό:</p>
+            
+            <div class="info-title" style="margin-top: 20px;">Τράπεζα Πειραιώς</div>
+            <div class="bank-details">GR2001722280005228108520239</div>
+        </section>
+
+    </div>
+
+</body>
+</html>
