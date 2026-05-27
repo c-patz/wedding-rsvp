@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Γάμος Χρήστου & Μαρίας - RSVP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Garamond', serif;
+            background: linear-gradient(135deg, #faf6f1 0%, #f5e6dc 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.1);
+            max-width: 700px;
+            width: 100%;
+            padding: 50px 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .decorative-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4a5a5, transparent);
+            margin: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            color: #8b4545;
+            margin-bottom: 10px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        .couple-names {
+            font-size: 1.5em;
+            color: #a67c7c;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #a67c7c;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .event-details {
+            background: linear-gradient(135deg, #fde8dc 0%, #f5d5cc 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #d4a5a5;
+        }
+
+        .event-details h3 {
+            color: #8b4545;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .event-details p {
+            color: #6b3c3c;
+            font-size: 1em;
+            line-height: 1.8;
+            margin: 8px 0;
+        }
+
+        .event-time {
+            font-weight: bold;
+            color: #8b4545;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            color: #8b4545;
+            margin-bottom: 15px;
+            font-weight: bold;
+            border-bottom: 2px solid #d4a5a5;
+            padding-bottom: 10px;
+        }
+
+        .info-box {
+            background-color: #fef9f7;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border-left: 3px solid #d4a5a5;
+        }
+
+        .info-box p {
+            color: #6b3c3c;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .welcome-message {
+            color: #6b3c3c;
+            text-align: center;
+            font-size: 1.05em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .form-section {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #6b3c3c;
+            font-size: 1.05em;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e8d5cc;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: all 0.3s ease;
+            background-color: #fef9f7;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #d4a5a5;
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(212, 165, 165, 0.1);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 30px;
+            margin-top: 12px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #d4a5a5;
+        }
+
+        .radio-option label {
+            margin: 0;
+            font-weight: normal;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .meal-choices {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .meal-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border: 2px solid #e8d5cc;
+            border-radius: 8px;
+            background-color: #fef9f7;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .meal-option:hover {
+            border-color: #d4a5a5;
+            background-color: #fff;
+        }
+
+        .meal-option input[type="radio"] {
+            margin-bottom: 8px;
+        }
+
+        .meal-option label {
+            margin: 0;
+            font-weight: normal;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #d4a5a5 0%, #c89898 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #c89898 0%, #bd8b8b 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(139, 69, 19, 0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .required {
+            color: #d4a5a5;
+        }
+
+        .contact-info {
+            background-color: #fde8dc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #d4a5a5;
+        }
+
+        .contact-info h3 {
+            color: #8b4545;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            color: #6b3c3c;
+            font-size: 1em;
+            line-height: 1.8;
+            margin: 10px 0;
+        }
+
+        .registry-info {
+            background-color: #fef9f7;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px dashed #d4a5a5;
+        }
+
+        .registry-info h3 {
+            color: #8b4545;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .registry-info p {
+            color: #6b3c3c;
+            font-size: 0.95em;
+            line-height: 1.8;
+            margin: 8px 0;
+        }
+
+        .registry-iban {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #8b4545;
+            font-family: 'Courier New', monospace;
+            word-break: break-all;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #e8d5cc;
+            color: #6b3c3c;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+            border-left: 4px solid #d4a5a5;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .couple-names {
+                font-size: 1.2em;
+            }
+
+            .meal-choices {
+                grid-template-columns: 1fr;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .event-details {
+                padding: 20px;
+            }
+
+            .event-details p {
+                font-size: 0.95em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .couple-names {
+                font-size: 1em;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✨ Ο Γάμος ✨</h1>
+            <p class="couple-names">Χρήστος & Μαρία</p>
+            <div class="decorative-line"></div>
+        </div>
+
+        <p class="welcome-message">
+            Σας καλούμε να γιορτάσετε μαζί μας τον πιο σημαντικό ημέρα της ζωής μας.<br>
+            Παρακαλούμε επιβεβαιώστε τη συμμετοχή σας στην παρακάτω φόρμα.
+        </p>
+
+        <!-- Ceremony Details -->
+        <div class="event-details">
+            <h3>📋 Τελετή Γάμου</h3>
+            <p class="event-time">Κυριακή, 5 Ιουλίου - 6:00μ.μ.</p>
+            <p><strong>Ιερό Παρεκκλήσιο Αγίου Παϊσίου</strong></p>
+            <p>Κτήμα Νότο Μαρίνου Αντύπα 50, Πυλαία</p>
+        </div>
+
+        <!-- Reception Details -->
+        <div class="section">
+            <h3 class="section-title">🍽️ Δεξίωση</h3>
+            <div class="info-box">
+                <p>Θα ακολουθήσει δεξίωση στο <strong>Κτήμα Νότο</strong></p>
+            </div>
+        </div>
+
+        <!-- Family Information -->
+        <div class="section">
+            <h3 class="section-title">👨‍👩‍👧 Οικογένειες</h3>
+            <div class="info-box">
+                <p><strong>Γονείς του Νεφέλου:</strong><br>Στέλιος & Χρύσα Πατσιατζή</p>
+            </div>
+            <div class="info-box">
+                <p><strong>Γονείς της Νεφέλης:</strong><br>Χρήστος & Γλυκερία Γκουμά</p>
+            </div>
+        </div>
+
+        <!-- Best Man & Maid of Honor -->
+        <div class="section">
+            <h3 class="section-title">💍 Κουμπάροι</h3>
+            <div class="info-box">
+                <p><strong>Κουμπάρα:</strong> Καλλιόπη Σατραζέμη</p>
+            </div>
+            <div class="info-box">
+                <p><strong>Κουμπάρος:</strong> Βασίλης Ρέππας</p>
+            </div>
+        </div>
+
+        <!-- RSVP Form -->
+        <div class="section">
+            <h3 class="section-title">📝 Επιβεβαίωση Παρουσίας (RSVP)</h3>
+            <form id="rsvpForm">
+                <div class="form-section">
+                    <label for="guestName">Όνομα Επισκέπτη <span class="required">*</span></label>
+                    <input type="text" id="guestName" name="guestName" placeholder="Το όνομά σας" required>
+                </div>
+
+                <div class="form-section">
+                    <label for="guestEmail">Διεύθυνση Email <span class="required">*</span></label>
+                    <input type="email" id="guestEmail" name="guestEmail" placeholder="email@example.com" required>
+                </div>
+
+                <div class="form-section">
+                    <label>Θα παρευρεθείτε; <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="attendYes" name="attendance" value="Ναι" required>
+                            <label for="attendYes">Ναι, θα έρθω!</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="attendNo" name="attendance" value="Όχι" required>
+                            <label for="attendNo">Δυστυχώς δεν μπορώ</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <label>Επιλογή Φαγητού <span class="required">*</span></label>
+                    <div class="meal-choices">
+                        <div class="meal-option">
+                            <input type="radio" id="beef" name="mealChoice" value="Κρέας" required>
+                            <label for="beef">🥩 Κρέας</label>
+                        </div>
+                        <div class="meal-option">
+                            <input type="radio" id="chicken" name="mealChoice" value="Κοτόπουλο" required>
+                            <label for="chicken">🍗 Κοτόπουλο</label>
+                        </div>
+                        <div class="meal-option">
+                            <input type="radio" id="vegetarian" name="mealChoice" value="Χορτοφάγο" required>
+                            <label for="vegetarian">🌱 Χορτοφάγο</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit">Υποβολή RSVP</button>
+                <div class="success-message" id="successMessage">
+                    ✓ Ευχαριστούμε! Η επιβεβαίωση σας έχει λαμβθεί.
+                </div>
+            </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h3>📞 Επιβεβαίωση Παρουσίας</h3>
+            <p><strong>Παρακαλούμε επιβεβαιώστε τη παρουσία σας μέχρι τις 15 Ιουνίου</strong></p>
+            <p><strong>Τηλέφωνο:</strong> 6945029569</p>
+        </div>
+
+        <!-- Wedding Registry -->
+        <div class="registry-info">
+            <h3>💝 Προαιρετική Λίστα Γάμου</h3>
+            <p>Τράπεζα Πειραιώς</p>
+            <p class="registry-iban">GR2001722280005228108520239</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                name: document.getElementById('guestName').value,
+                email: document.getElementById('guestEmail').value,
+                attendance: document.querySelector('input[name="attendance"]:checked').value,
+                mealChoice: document.querySelector('input[name="mealChoice"]:checked').value
+            };
+            
+            console.log('RSVP Submitted:', formData);
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
